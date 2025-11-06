@@ -8,21 +8,30 @@ import { HttpClient } from '@angular/common/http';
   standalone: false,
 })
 export class Tab1Page {
-  meme: any = null;
+  memes: any[] = [];
+  allMemes: any[] = [];
+  loading = false;
 
   constructor(private http: HttpClient) {}
 
   ionViewWillEnter() {
-    this.getMeme();
+    this.getMemes();
   }
 
-  getMeme() {
-    this.http.get('https://www.reddit.com/r/memes/random/.json').subscribe((data: any) => {
-      const post = data[0]?.data?.children[0]?.data;
-      this.meme = {
-        title: post.title,
-        url: post.url,
-      };
+  getMemes() {
+    this.loading = true;
+    this.http.get('https://api.imgflip.com/get_memes').subscribe((data: any) => {
+      this.allMemes = data.data.memes;
+      this.setRandomMemes();
+      this.loading = false;
+    }, () => {
+      this.loading = false;
     });
+  }
+
+  setRandomMemes() {
+    // Selecciona 10 memes aleatorios sin repetir
+    const shuffled = this.allMemes.sort(() => 0.5 - Math.random());
+    this.memes = shuffled.slice(0, 10);
   }
 }
