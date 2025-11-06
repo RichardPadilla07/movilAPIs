@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-olvidar-contrasenia',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./olvidar-contrasenia.page.scss'],
   standalone: false
 })
-export class OlvidarContraseniaPage implements OnInit {
+export class OlvidarContraseniaPage {
+  correo: string = '';
+  mensaje: string = '';
+  error: string = '';
 
-  constructor() { }
-
-  ngOnInit() {
+  recuperar() {
+    // Aquí va la lógica para recuperar contraseña
+    // Si es exitoso: this.mensaje = 'Revisa tu correo para recuperar tu contraseña';
+    // Si hay error: this.error = 'No se pudo enviar el correo';
   }
-
 }

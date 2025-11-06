@@ -27,6 +27,22 @@ const routes: Routes = [
     loadChildren: () =>
       import('./registro-exitoso/registro-exitoso.module').then((m) => m.RegistroExitosoPageModule),
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'olvidar-contrasenia',
+    loadChildren: () => import('./olvidar-contrasenia/olvidar-contrasenia.module').then( m => m.OlvidarContraseniaPageModule)
+  },
+  {
+    path: 'registro-exitoso',
+    loadChildren: () => import('./registro-exitoso/registro-exitoso.module').then( m => m.RegistroExitosoPageModule)
+  },
 ];
 
 @NgModule({

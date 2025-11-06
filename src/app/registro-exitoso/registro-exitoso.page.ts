@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-registro-exitoso',
@@ -6,11 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro-exitoso.page.scss'],
   standalone: false
 })
-export class RegistroExitosoPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class RegistroExitosoPage {}

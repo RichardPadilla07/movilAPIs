@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -6,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro.page.scss'],
   standalone: false
 })
-export class RegistroPage implements OnInit {
+export class RegistroPage {
+  nombre: string = '';
+  correo: string = '';
+  contrasena: string = '';
 
-  constructor() { }
-
-  ngOnInit() {
+  registrar() {
+    // Aquí va la lógica para registrar un usuario
+    // Ejemplo: this.authService.registrar(this.nombre, this.correo, this.contrasena);
   }
-
 }
