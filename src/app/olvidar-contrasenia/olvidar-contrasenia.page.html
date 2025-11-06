@@ -1,0 +1,15 @@
+<ion-content>
+  <div class="recuperar-container">
+    <h2 class="recuperar-title">Recuperar Contraseña</h2>
+    <form>
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="email" required></ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit" class="recuperar-btn">Enviar</ion-button>
+    </form>
+    <div class="recuperar-links">
+      <ion-button expand="block" fill="clear" [routerLink]="['/login']">Iniciar Sesión</ion-button>
+    </div>
+  </div>
+</ion-content>

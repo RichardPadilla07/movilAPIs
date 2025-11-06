@@ -1,0 +1,39 @@
+.registro-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.registro-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.registro-btn {
+  margin-top: 20px;
+}
+
+.registro-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+@media (max-width: 500px) {
+  .registro-container {
+    max-width: 100%;
+    padding: 24px 8px 0 8px;
+  }
+  .registro-title {
+    font-size: 1.5rem;
+  }
+}

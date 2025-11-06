@@ -1,0 +1,44 @@
+.exitoso-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.exitoso-icon {
+  font-size: 64px;
+  color: #4caf50;
+  margin-bottom: 16px;
+}
+
+.exitoso-title {
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.exitoso-msg {
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
+
+.exitoso-btn {
+  margin-top: 8px;
+}
+
+@media (max-width: 500px) {
+  .exitoso-container {
+    max-width: 100%;
+    padding: 24px 8px 0 8px;
+  }
+  .exitoso-title {
+    font-size: 1.5rem;
+  }
+}

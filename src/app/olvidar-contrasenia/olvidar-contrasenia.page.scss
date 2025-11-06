@@ -1,0 +1,39 @@
+.recuperar-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.recuperar-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.recuperar-btn {
+  margin-top: 20px;
+}
+
+.recuperar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+@media (max-width: 500px) {
+  .recuperar-container {
+    max-width: 100%;
+    padding: 24px 8px 0 8px;
+  }
+  .recuperar-title {
+    font-size: 1.5rem;
+  }
+}
