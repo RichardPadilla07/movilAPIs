@@ -18,7 +18,12 @@ export class LoginPage {
   async signIn() {
     this.error = '';
     try {
-      await this.afAuth.signInWithEmailAndPassword(this.correo, this.contrasena);
+      const cred = await this.afAuth.signInWithEmailAndPassword(this.correo, this.contrasena);
+      if (cred.user && !cred.user.emailVerified) {
+        this.error = 'Debes verificar tu correo antes de iniciar sesión. Revisa tu bandeja de entrada o Spam.';
+        await this.afAuth.signOut();
+        return;
+      }
       this.router.navigate(['/tabs']);
     } catch (err: any) {
       this.error = 'Correo o contraseña incorrectos';

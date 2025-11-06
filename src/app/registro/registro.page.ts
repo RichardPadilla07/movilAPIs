@@ -18,7 +18,9 @@ export class RegistroPage {
   async registrar() {
     this.error = '';
     try {
-      await this.afAuth.createUserWithEmailAndPassword(this.correo, this.contrasena);
+      const cred = await this.afAuth.createUserWithEmailAndPassword(this.correo, this.contrasena);
+      await cred.user?.sendEmailVerification();
+      // Redirige a la página de registro exitoso
       this.router.navigate(['/registro-exitoso']);
     } catch (err: any) {
       if (err.code === 'auth/email-already-in-use') {
