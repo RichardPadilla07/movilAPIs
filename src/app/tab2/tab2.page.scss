@@ -1,0 +1,40 @@
+.joke-card {
+  margin: 16px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+ion-card-title {
+  font-size: 1.1rem;
+  color: #fff !important;
+}
+
+ion-card-content {
+  font-size: 1rem;
+  color: #fff !important;
+  margin-bottom: 0.5rem;
+}
+
+ion-card-content b {
+  color: #fff !important;
+}
+
+ion-card {
+  background: #222 !important;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .joke-card {
+    margin: 8px 4px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  ion-card-title {
+    font-size: 1rem;
+  }
+  ion-card-content {
+    font-size: 0.98rem;
+  }
+}

@@ -14,4 +14,16 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <ion-content>
+    <ion-card *ngIf="meme">
+      <img [src]="meme.url" [alt]="meme.title" />
+      <ion-card-header>
+        <ion-card-title>{{ meme.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" (click)="getMeme()">Otro meme</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>
