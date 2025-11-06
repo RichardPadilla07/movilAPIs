@@ -5,50 +5,34 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'login',
-    loadChildren: () =>
-      import('./login/login.module').then((m) => m.LoginPageModule),
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'registro',
-    loadChildren: () =>
-      import('./registro/registro.module').then((m) => m.RegistroPageModule),
+    loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule)
   },
   {
     path: 'olvidar-contrasenia',
-    loadChildren: () =>
-      import('./olvidar-contrasenia/olvidar-contrasenia.module').then((m) => m.OlvidarContraseniaPageModule),
+    loadChildren: () => import('./olvidar-contrasenia/olvidar-contrasenia.module').then(m => m.OlvidarContraseniaPageModule)
   },
   {
     path: 'registro-exitoso',
-    loadChildren: () =>
-      import('./registro-exitoso/registro-exitoso.module').then((m) => m.RegistroExitosoPageModule),
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
-  },
-  {
-    path: 'olvidar-contrasenia',
-    loadChildren: () => import('./olvidar-contrasenia/olvidar-contrasenia.module').then( m => m.OlvidarContraseniaPageModule)
-  },
-  {
-    path: 'registro-exitoso',
-    loadChildren: () => import('./registro-exitoso/registro-exitoso.module').then( m => m.RegistroExitosoPageModule)
-  },
+    loadChildren: () => import('./registro-exitoso/registro-exitoso.module').then(m => m.RegistroExitosoPageModule)
+  }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

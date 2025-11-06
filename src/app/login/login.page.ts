@@ -13,9 +13,15 @@ export class LoginPage {
   contrasena: string = '';
   error: string = '';
 
-  signIn() {
-    // Aquí va la lógica de inicio de sesión
-    // Si hay error, puedes asignar un mensaje a this.error
-    // this.error = 'Correo o contraseña incorrectos';
+  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+
+  async signIn() {
+    this.error = '';
+    try {
+      await this.afAuth.signInWithEmailAndPassword(this.correo, this.contrasena);
+      this.router.navigate(['/tabs']);
+    } catch (err: any) {
+      this.error = 'Correo o contraseña incorrectos';
+    }
   }
 }
