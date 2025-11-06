@@ -10,11 +10,11 @@
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" required [(ngModel)]="contrasena" name="contrasena"></ion-input>
       </ion-item>
-      <ion-button expand="block" type="submit" class="login-btn">INICIAR SESIÓN</ion-button>
+      <ion-button expand="block" type="submit" class="login-btn">Iniciar sesion</ion-button>
     </form>
     <div *ngIf="error" class="error-msg">{{ error }}</div>
     <div class="login-links">
-      <ion-button expand="block" type="submit" [routerLink]="['/registro']">CREAR CUENTA</ion-button>
+      <ion-button expand="block" type="submit" [routerLink]="['/registro']">Registrarse</ion-button>
       <ion-button expand="block" fill="clear" [routerLink]="['/olvidar-contrasenia']">¿OLVIDASTE TU CONTRASEÑA?</ion-button>
     </div>
   </div>
