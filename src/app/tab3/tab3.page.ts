@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -11,7 +13,11 @@ export class Tab3Page {
   cats: any[] = [];
   loading = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private http: HttpClient
+  ) {}
 
   ionViewWillEnter() {
     this.getCats();
@@ -25,6 +31,12 @@ export class Tab3Page {
       this.loading = false;
     }, () => {
       this.loading = false;
+    });
+  }
+
+  logout() {
+    this.afAuth.signOut().then(() => {
+      this.router.navigate(['/login']);
     });
   }
 }

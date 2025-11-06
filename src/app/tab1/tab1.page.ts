@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -11,10 +13,16 @@ export class Tab1Page {
   memes: any[] = [];
   allMemes: any[] = [];
   loading = false;
+  correo = '';
+  contrasena = '';
+  error = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private afAuth: AngularFireAuth, private router: Router, private http: HttpClient) {}
 
   ionViewWillEnter() {
+    this.correo = '';
+    this.contrasena = '';
+    this.error = '';
     this.getMemes();
   }
 
@@ -33,5 +41,11 @@ export class Tab1Page {
     // Selecciona 10 memes aleatorios sin repetir
     const shuffled = this.allMemes.sort(() => 0.5 - Math.random());
     this.memes = shuffled.slice(0, 10);
+  }
+
+  logout() {
+    this.afAuth.signOut().then(() => {
+      this.router.navigate(['/login']);
+    });
   }
 }

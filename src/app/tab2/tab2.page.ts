@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -10,7 +12,11 @@ import { HttpClient } from '@angular/common/http';
 export class Tab2Page {
   jokes: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private http: HttpClient
+  ) {}
 
   ionViewWillEnter() {
     this.getJokes();
@@ -19,6 +25,12 @@ export class Tab2Page {
   getJokes() {
     this.http.get('https://v2.jokeapi.dev/joke/Any?amount=10').subscribe((data: any) => {
       this.jokes = data.jokes;
+    });
+  }
+
+  logout() {
+    this.afAuth.signOut().then(() => {
+      this.router.navigate(['/login']);
     });
   }
 }

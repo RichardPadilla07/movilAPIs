@@ -38,3 +38,27 @@ ion-card {
     font-size: 0.98rem;
   }
 }
+
+.logout-btn {
+  color: #fff;
+  background: #e74c3c;
+  border-radius: 6px;
+  margin-left: 8px;
+  --background: #e74c3c;
+  --color: #fff;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  filter: brightness(0.9);
+}
+
+.hide-on-mobile {
+  margin-left: 4px;
+}
+
+@media (max-width: 500px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
