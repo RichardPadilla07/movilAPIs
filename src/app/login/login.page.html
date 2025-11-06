@@ -14,7 +14,7 @@
     </form>
     <div *ngIf="error" class="error-msg">{{ error }}</div>
     <div class="login-links">
-      <ion-button expand="block" fill="clear" [routerLink]="['/registro']">CREAR CUENTA</ion-button>
+      <ion-button expand="block" type="submit" [routerLink]="['/registro']">CREAR CUENTA</ion-button>
       <ion-button expand="block" fill="clear" [routerLink]="['/olvidar-contrasenia']">¿OLVIDASTE TU CONTRASEÑA?</ion-button>
     </div>
   </div>
