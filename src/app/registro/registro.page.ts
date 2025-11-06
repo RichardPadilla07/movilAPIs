@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,12 +9,27 @@ import { Router } from '@angular/router';
   standalone: false
 })
 export class RegistroPage {
-  nombre: string = '';
   correo: string = '';
   contrasena: string = '';
+  error: string = '';
 
-  registrar() {
-    // Aquí va la lógica para registrar un usuario
-    // Ejemplo: this.authService.registrar(this.nombre, this.correo, this.contrasena);
+  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+
+  async registrar() {
+    this.error = '';
+    try {
+      await this.afAuth.createUserWithEmailAndPassword(this.correo, this.contrasena);
+      this.router.navigate(['/registro-exitoso']);
+    } catch (err: any) {
+      if (err.code === 'auth/email-already-in-use') {
+        this.error = 'El correo ya está registrado. Intenta con otro.';
+      } else if (err.code === 'auth/invalid-email') {
+        this.error = 'El correo no es válido.';
+      } else if (err.code === 'auth/weak-password') {
+        this.error = 'La contraseña debe tener al menos 6 caracteres.';
+      } else {
+        this.error = 'No se pudo crear la cuenta. Intenta de nuevo.';
+      }
+    }
   }
 }
