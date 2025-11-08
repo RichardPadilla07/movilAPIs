@@ -3,11 +3,11 @@
     <h2 class="registro-title">Registro</h2>
     <form (ngSubmit)="registrar()">
       <ion-item>
-        <ion-label position="floating">Crear correo electrónico</ion-label>
+        <ion-label position="floating">Registrar correo electrónico</ion-label>
         <ion-input type="email" required [(ngModel)]="correo" name="correo"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Crear Contraseña</ion-label>
+        <ion-label position="floating">Registrar Contraseña</ion-label>
         <ion-input type="password" required [(ngModel)]="contrasena" name="contrasena"></ion-input>
       </ion-item>
       <ion-button expand="block" type="submit" class="registro-btn">REGISTRARSE</ion-button>
