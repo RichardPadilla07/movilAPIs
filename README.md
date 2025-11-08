@@ -166,7 +166,7 @@ Web: https://loginapis-b8132.web.app/ <br>
 
 ## Transformar a APK
 
-Aqui solo aplicacion pasa hacer apk una vez hecho el despliegue en firebase y finalizado el proyecto, utilizando android studio hacemos la transformacion. A continuacion solo se adjunta las fotos ya que practicamente es la misma explicacion ya dada. 
+Aqui se pasa hacer apk una vez hecho el despliegue en firebase y finalizado el proyecto, utilizando android studio hacemos la transformacion. A continuacion solo se adjunta las fotos ya que practicamente es la misma explicacion ya dada. 
 
 <br>
 
