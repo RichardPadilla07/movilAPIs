@@ -1,7 +1,7 @@
 # Deber de Repaso — Consumo de API’s + Login
 ## Integrantes:
 - Richard Padilla
-- Ariel Sanchez
+- Ariel Sánchez
 
 ## Funcionalidades Principales
 1.- Login: Registrarse, recuperar contraseña y confirmacion de cuenta (correo y contraseña.) <br>
