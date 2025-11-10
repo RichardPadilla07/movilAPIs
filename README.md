@@ -13,7 +13,7 @@
 ## Enlaces del Tik tok y Web
 
 Web: https://loginapis-b8132.web.app/ <br>
-Tik tok: <br>
+Tik tok: https://vm.tiktok.com/ZMAWk6HgN/<br>
 
 ## Login
 
